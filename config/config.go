@@ -33,7 +33,7 @@ func LoadConfig() {
 	}
 	Config = ConfigList{
 		Port:      cfg.Section("web").Key("port").MustString("8080"),
-		SQLDriver: cfg.Section("db").Key("driber").MustString("sqlite3"),
+		SQLDriver: cfg.Section("db").Key("driver").MustString("postgres"),
 		DbName:    cfg.Section("name").Key("name").MustString("webapp.sql"),
 		LogFile:   cfg.Section("web").Key("logfile").MustString("webapp.log"),
 		Static:    cfg.Section("web").Key("static").String(),
