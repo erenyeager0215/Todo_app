@@ -92,11 +92,6 @@ func StartMainServer() error {
 	http.HandleFunc("/todos/update/", parseURL(todoUpdate))
 	http.HandleFunc("/todos/delete/", parseURL(todoDelete))
 
-	//引数に:とポート番号を渡す
-	//第二引数がnilだったらDefaultServerMuxのServeHTTP()を呼ぶ
-	//nilにすることで、登録されていないURLにアクセスされたとき404ページをデフォで出す
-	return http.ListenAndServe(":"+config.Config.Port, nil)
-
 	//heroku対応
 	//herokuからportを取得
 	port := os.Getenv("PORT")
